@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { Provider } from 'rebass';
-import { Flex } from 'grid-styled';
-import Container from './components/Container';
-import Header from './components/Header';
+import PropTypes from 'prop-types';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard';
 
 class App extends Component {
   render() {
     return (
-      <Provider>
-        <Container>
-          <Flex flexDirection="wrap">
-            <Header />
-          </Flex>
-        </Container>
-      </Provider>
+      <Router>
+        <Switch>
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Redirect to="/dashboard" />
+        </Switch>
+      </Router>
     );
   }
 }

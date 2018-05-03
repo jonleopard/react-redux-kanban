@@ -1,8 +1,14 @@
 import React from 'react';
-import { Box } from 'grid-styled';
+import styled from 'styled-components';
+import { Plus } from 'react-feather';
+import { Flex, Box } from 'rebass';
 
-const Row = () => {
-  return <Box w={1 / 2}>hello</Box>;
+const Column = () => {
+  return (
+    <div>
+      <Box w={1}>This is another column</Box>
+    </div>
+  );
 };
 
-export default Row;
+export default Column;

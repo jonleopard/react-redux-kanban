@@ -1,11 +1,13 @@
 import React from 'react';
-import { Heading } from 'rebass';
+import { Heading, Divider } from 'rebass';
+import { Box } from 'grid-styled';
 
 const Header = () => {
   return (
-    <div>
+    <Box w={1} mt={1}>
       <Heading children="Welcome to the dashboard!" />
-    </div>
+      <Divider w={1} color="gray" />
+    </Box>
   );
 };
 

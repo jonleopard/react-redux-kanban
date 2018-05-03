@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Textarea from 'react-textarea-autosize';
-import { Flex, Box } from 'rebass';
+import { Box } from 'rebass';
 
-const StyledCard = styled.div`
-  display: flex;
+const StyledCard = styled(Box)`
   background-color: white;
   padding: 10px 12px;
   border-radius: 4px;
@@ -23,18 +22,14 @@ const Input = styled(Textarea)`
   border: none;
   border-radius: 3px;
   resize: none;
-  outline:0px none transparent;
+  outline: 0px none transparent;
 `;
 
 const Card = () => {
   return (
-    <Flex>
-      <Box w={1} mb={1}>
-        <StyledCard>
-          <Input placeholder="Hello! I'm a word definition, edit me!" type="text" />
-        </StyledCard>
-      </Box>
-    </Flex>
+    <StyledCard w={1} mb={2}>
+      <Input placeholder="I'm a word definition, edit me!" type="text" />
+    </StyledCard>
   );
 };
 

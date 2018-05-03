@@ -28,12 +28,10 @@ class Dashboard extends Component {
   render() {
     const { definition, possibleValues } = this.state;
     return (
-      <Flex>
-        <Container>
-          <Header />
-          <ColumnContainer />
-        </Container>
-      </Flex>
+      <Container>
+        <Header />
+        <ColumnContainer />
+      </Container>
     );
   }
 }

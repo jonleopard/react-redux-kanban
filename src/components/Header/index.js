@@ -1,6 +1,5 @@
 import React from 'react';
-import { Heading, Divider } from 'rebass';
-import { Box } from 'grid-styled';
+import { Box, Heading, Divider } from 'rebass';
 
 const Header = () => {
   return (

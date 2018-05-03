@@ -1,22 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { Flex, Box } from 'rebass';
 import Card from '../Card/Card';
+import AddCard from '../Card/AddCard';
 
-const StyledColumn = styled(Box)`
-  background-color: gray;
+export const StyledColumn = styled(Box)`
   width: 300px;
-  height: 600px;
+  border-right: 1px dashed #cfd7df;
 `;
 
 const Column = () => {
   return (
-    <div>
-      <StyledColumn mr={2} p={2}>
+    <Flex>
+      <StyledColumn p={2}>
         <Card />
-        <Card />
+        <AddCard />
       </StyledColumn>
-    </div>
+    </Flex>
   );
 };
 

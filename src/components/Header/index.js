@@ -5,8 +5,8 @@ import { Box } from 'grid-styled';
 const Header = () => {
   return (
     <Box w={1} mt={1}>
-      <Heading children="Welcome to the dashboard!" />
-      <Divider w={1} color="gray" />
+      <Heading children="Dashboard" />
+      <Divider w={1} color="#cfd7df" />
     </Box>
   );
 };

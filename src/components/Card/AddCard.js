@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Flex, Box } from 'rebass';
+import { Box } from 'rebass';
 import { Plus } from 'react-feather';
 
 const StyledAddCard = styled(Box)`
@@ -21,7 +21,7 @@ const StyledAddCard = styled(Box)`
 
 const AddCard = () => {
   return (
-    <StyledAddCard w={1} mt={3}>
+    <StyledAddCard mt={3}>
       <Plus />
     </StyledAddCard>
   );

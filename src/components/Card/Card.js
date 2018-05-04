@@ -27,7 +27,7 @@ const Input = styled(Textarea)`
 
 const Card = () => {
   return (
-    <StyledCard w={1} mb={2}>
+    <StyledCard mb={2}>
       <Input placeholder="I'm a word definition, edit me!" type="text" />
     </StyledCard>
   );

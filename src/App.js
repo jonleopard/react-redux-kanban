@@ -5,17 +5,21 @@ import {
   Redirect,
   Switch,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 import Dashboard from './components/Dashboard/Dashboard';
 
 class App extends Component {
   render() {
     return (
-      <Router>
-        <Switch>
-          <Route exact path="/dashboard" component={Dashboard} />
-          <Redirect to="/dashboard" />
-        </Switch>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <Switch>
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Redirect to="/dashboard" />
+          </Switch>
+        </Router>
+      </Provider>
     );
   }
 }

@@ -31,6 +31,7 @@ class ColumnContainer extends Component {
     this.props.fetchDefinitions();
   }
   render() {
+    console.log(this.props.definitions)
     const cardItems = this.props.definitions.map((card, i) => (
       <div key={i}>
         <h3>{card.definition}</h3>

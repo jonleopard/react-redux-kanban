@@ -12,8 +12,7 @@ export default injectGlobal`
   }
 
   body {
-    background: #f4f5f7;
+    background: white;
     font-family: 'Open Sans', sans-serif;
   }
-
 `;

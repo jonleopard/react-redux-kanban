@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import Textarea from 'react-textarea-autosize';
 import { connect } from 'react-redux';
-import { Flex, Box } from 'rebass';
+import { Flex, Box, Lead } from 'rebass';
 import { PlusCircle } from 'react-feather';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
 import { fetchDefinitions } from '../../actions/cardActions';
 
 const StyledColumn = styled(Box)`
-  max-width: 300px;
-  border-right: 1px dashed #cfd7df;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  background-color: #eff1f5;
+  border-radius: 4px;
+  border: 1px solid #ebedef;
+  box-shadow: 0 1px 3px 0 #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
 `;
 
-const StyledAddColumn = styled(StyledColumn)`
+const StyledAddColumn = styled(Box)`
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -23,7 +33,18 @@ const StyledAddColumn = styled(StyledColumn)`
   &:hover {
     color: #8898aa;
     transition: 150ms ease;
+    background-color: transparent;
   }
+`;
+
+const RowTitle = styled(Textarea)`
+  background: transparent;
+  border: none;
+  font-weight: 800;
+  font-size: 18px
+  resize: none;
+  outline: 0px none transparent;
+  margin-bottom: 14px;
 `;
 
 class ColumnContainer extends Component {
@@ -31,7 +52,6 @@ class ColumnContainer extends Component {
     this.props.fetchDefinitions();
   }
   render() {
-    console.log(this.props.definitions)
     const cardItems = this.props.definitions.map((card, i) => (
       <div key={i}>
         <h3>{card.definition}</h3>
@@ -39,8 +59,9 @@ class ColumnContainer extends Component {
     ));
     return (
       <Flex>
-        <StyledColumn w={1} pr={4}>
-          <Card>{cardItems}</Card>
+        <StyledColumn px={2} pt={2} pb={1} mr={4}>
+          <RowTitle children="Weekday Names" type="text"/>
+          <Card />
           <AddCard />
         </StyledColumn>
         <StyledAddColumn w={1}>

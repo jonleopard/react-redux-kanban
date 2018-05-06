@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Textarea from 'react-textarea-autosize';
-import { Box, Text } from 'rebass';
+import { Box } from 'rebass';
 
 const StyledCard = styled(Box)`
   background-color: white;
@@ -27,8 +27,8 @@ const Input = styled(Textarea)`
 
 const Card = () => {
   return (
-    <StyledCard mb={2}>
-      <Input placeholder="Date" type="text" />
+    <StyledCard w={1} mb={2}>
+      <Input placeholder="Monday" type="text" />
     </StyledCard>
   );
 };

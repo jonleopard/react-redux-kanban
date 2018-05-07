@@ -46,4 +46,4 @@ That said, I have thoroughly enjoyed tackling this challenge, and will continue 
 
 ### Project Diagram
 
-<img src="screenshot.png" width="888">
+<img src="diagram.png" width="888">

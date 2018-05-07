@@ -1,16 +1,16 @@
-import { FETCH_DEFINITIONS, ADD_DEFEINITION } from '../actions/types';
+import { FETCH_COLUMNS, ADD_COLUMN, ADD_DEFINITION } from '../actions/types';
 
 const initialState = {
-  cards: [],
-  card: {},
+  columns: [],
+  cards: {},
 };
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case FETCH_DEFINITIONS:
+    case FETCH_COLUMNS:
       return {
         ...state,
-        cards: action.payload,
+        columns: action.payload,
       };
     default:
       return state;

@@ -1,36 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import Textarea from 'react-textarea-autosize';
-import { Box } from 'rebass';
+import StyledCard from './StyledCard';
+import StyledInput from './StyledInput';
 
-const StyledCard = styled(Box)`
-  background-color: white;
-  padding: 10px 12px;
-  border-radius: 4px;
-  border: 1px solid transparent;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
 
-  &:hover {
-    box-shadow: 0 1px 3px 0 #cfd7df;
-  }
-`;
-
-const Input = styled(Textarea)`
-  width: 100%;
-  border: none;
-  border-radius: 3px;
-  resize: none;
-  outline: 0px none transparent;
-`;
-
-const Card = () => {
+function Card({ placeholder, definition, ...props }) {
   return (
     <StyledCard w={1} mb={2}>
-      <Input placeholder="Monday" type="text" />
+      <StyledInput
+        placeholder={placeholder}
+        value={definition}
+        type="text"
+      />
     </StyledCard>
   );
-};
+}
 
 export default Card;

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import definitionReducer from './definitionReducer';
+import columnReducer from './columnReducer';
 
 export default combineReducers({
-  definitions: definitionReducer,
+  column: columnReducer,
 });

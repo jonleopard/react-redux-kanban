@@ -6,6 +6,8 @@ import {
   Switch,
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import store from './store';
 import Dashboard from './components/Dashboard/Dashboard';
 
@@ -24,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DragDropContext(HTML5Backend)(App);

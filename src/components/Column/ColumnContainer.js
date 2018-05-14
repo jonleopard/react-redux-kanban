@@ -4,20 +4,19 @@ import { Flex } from 'rebass';
 import { PlusCircle } from 'react-feather';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
-import { fetchColumns } from '../../actions/columnActions';
+import { fetchColumns, fetchCards } from '../../actions';
 import Column from './Column';
 import AddColumn from './AddColumn';
-import ColumnTitle from './ColumnTitle';
 
 class ColumnContainer extends Component {
   componentWillMount() {
     this.props.fetchColumns();
+    this.props.fetchCards();
   }
   render() {
     return (
       <Flex>
-        <Column px={2} pt={2} pb={1} mr={4}>
-          <ColumnTitle placeholder="Column title(definition)" />
+        <Column title="hello">
           <Card placeholder="Card(possibleValues)" />
           <AddCard />
         </Column>
@@ -30,8 +29,13 @@ class ColumnContainer extends Component {
   }
 }
 
+// whateverr is returned will show up as props
+// inside of ColumnContainer
 const mapStateToProps = state => ({
   columns: state.column.columns,
+  cards: state.cards,
 });
 
-export default connect(mapStateToProps, { fetchColumns })(ColumnContainer);
+export default connect(mapStateToProps, { fetchColumns, fetchCards })(
+  ColumnContainer
+);

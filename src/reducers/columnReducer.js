@@ -1,8 +1,8 @@
-import { FETCH_COLUMNS, ADD_COLUMN, ADD_DEFINITION } from '../actions/types';
+import { FETCH_COLUMNS, FETCH_CARDS, ADD_COLUMN, ADD_CARD } from '../actions';
 
 const initialState = {
   columns: [],
-  cards: {},
+  cards: [],
 };
 
 export default function(state = initialState, action) {
@@ -11,6 +11,11 @@ export default function(state = initialState, action) {
       return {
         ...state,
         columns: action.payload,
+      };
+    case FETCH_CARDS:
+      return {
+        ...state,
+        cards: action.payload,
       };
     default:
       return state;

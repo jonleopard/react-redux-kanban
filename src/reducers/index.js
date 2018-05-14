@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import columnReducer from './columnReducer';
+import ColumnReducer from './columnReducer';
 
 export default combineReducers({
-  column: columnReducer,
+  column: ColumnReducer,
 });

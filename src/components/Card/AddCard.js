@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { Button } from 'rebass';
 import { Plus } from 'react-feather';
 
-const StyledAddCard = styled(Box)`
+const StyledAddCard = styled(Button)`
   display: flex;
   justify-content: center;
   background-color: transparent;
@@ -19,9 +19,9 @@ const StyledAddCard = styled(Box)`
   }
 `;
 
-const AddCard = () => {
+const AddCard = props => {
   return (
-    <StyledAddCard mt={3}>
+    <StyledAddCard mt={3} {...props}>
       <Plus />
     </StyledAddCard>
   );

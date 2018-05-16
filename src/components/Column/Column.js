@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
-import ColumnTitle from './ColumnTitle.js';
+import ColumnTitle from './ColumnTitle';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
+import { addCard } from '../../actions';
 
 const StyledColumn = styled(Box)`
   width: 300px;
@@ -18,14 +19,14 @@ const StyledColumn = styled(Box)`
   transition: box-shadow 150ms ease;
 `;
 
-function Column({ title, cards, placeholder, data }) {
+const Column = () => {
   return (
     <StyledColumn px={2} pt={2} pb={1} mr={4}>
-      <ColumnTitle placeholder={placeholder} data={data}/>
-      <Card placeholder={placeholder} />
+      <ColumnTitle />
+      <Card />
       <AddCard />
     </StyledColumn>
   );
-}
+};
 
 export default Column;

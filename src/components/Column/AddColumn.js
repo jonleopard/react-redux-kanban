@@ -1,7 +1,12 @@
+import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { PlusCircle } from 'react-feather';
+import { Button } from 'rebass';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addColumn } from '../Column/actions';
 
-const AddColumn = styled(Box)`
+const StyledAddColumn = styled(Button)`
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -9,6 +14,7 @@ const AddColumn = styled(Box)`
   align-items: center;
   color: #cfd7df;
   transition: 150ms ease;
+  background: none;
 
   &:hover {
     color: #8898aa;
@@ -17,4 +23,24 @@ const AddColumn = styled(Box)`
   }
 `;
 
-export default AddColumn;
+const AddColumn = ({ addColumn, props }) => {
+  return (
+    <StyledAddColumn w={1} onClick={addColumn} {...props}>
+      <PlusCircle size={50} />
+      <p>Add Column</p>
+    </StyledAddColumn>
+  );
+};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addColumn,
+    },
+    dispatch
+  );
+const mapStateToProps = state => ({
+  columns: state.column.columns,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddColumn);

@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, compose } from 'redux';
-import thunkMiddleware from 'redux-thunk';
-import rootReducer from './reducers';
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
+import rootReducer from './rootReducer';
 
 // this enables the chrome devtools for redux only in development
 const composeEnhancers =
@@ -11,12 +12,12 @@ const composeEnhancers =
 
 const initialState = {};
 
-const middleware = [thunkMiddleware];
+const middleware = [logger, thunk];
 
 const store = createStore(
   rootReducer,
   initialState,
-  composeEnhancers(applyMiddleware(...middleware, thunkMiddleware))
+  composeEnhancers(applyMiddleware(...middleware))
 );
 
 export default store;

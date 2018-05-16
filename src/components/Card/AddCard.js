@@ -2,6 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { Button } from 'rebass';
 import { Plus } from 'react-feather';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { addCard } from '../Card/actions';
 
 const StyledAddCard = styled(Button)`
   display: flex;
@@ -19,12 +22,23 @@ const StyledAddCard = styled(Button)`
   }
 `;
 
-const AddCard = props => {
+const AddCard = ({ addCard, props }) => {
   return (
-    <StyledAddCard mt={3} {...props}>
+    <StyledAddCard mt={3} onClick={addCard} {...props}>
       <Plus />
     </StyledAddCard>
   );
 };
 
-export default AddCard;
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addCard,
+    },
+    dispatch
+  );
+const mapStateToProps = state => ({
+  cards: state.card.cards,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCard);

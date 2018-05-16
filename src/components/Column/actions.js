@@ -8,11 +8,14 @@ export const ADD_COLUMN = 'ADD_COLUMN';
 //      type: 'FETCH_COLUMNS',
 //     data: columns[0][0]['definition'],
 //    });
-//  };
-//}
+// };
+// }
 
-export function addColumn() {
+let nextColumnId = 0;
+export function addColumn(column) {
   return {
     type: 'ADD_COLUMN',
+    id: nextColumnId++,
+    payload: column,
   };
 }

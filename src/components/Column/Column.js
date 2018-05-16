@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 import ColumnTitle from './ColumnTitle';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
-import { addCard } from '../../actions';
 
 const StyledColumn = styled(Box)`
   width: 300px;

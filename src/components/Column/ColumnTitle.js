@@ -4,7 +4,7 @@ import Textarea from 'react-textarea-autosize';
 
 const StyledColumnTitle = styled(Textarea)`
   background: transparent;
-  border: red;
+  border: none;
   font-weight: 800;
   font-size: 18px
   resize: none;

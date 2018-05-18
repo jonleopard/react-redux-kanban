@@ -5,7 +5,7 @@ import { Flex } from 'rebass';
 
 const ColumnOptions = () => {
   return (
-    <Flex justifyContent="flex-end" alignSelf="center">
+    <Flex justifyContent="flex-end">
       <MoreHorizontal color="gray">
         <Select />
       </MoreHorizontal>

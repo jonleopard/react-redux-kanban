@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Flex } from 'rebass';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';

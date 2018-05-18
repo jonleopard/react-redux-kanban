@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
 import { connect } from 'react-redux';
@@ -30,6 +30,7 @@ const Column = ({ cardData, columnId, columnData, addCard }) => {
       {columnData.possibleValues.map((card, index) => {
         return <Card key={'card' + index} cardData={card} />;
       })}
+
       <AddCard
         onClick={() => {
           addCard(columnId);

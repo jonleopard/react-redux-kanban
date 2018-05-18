@@ -13,8 +13,14 @@ const StyledColumnTitle = styled(Textarea)`
 `;
 
 const ColumnTitle = props => {
-  //return <StyledColumnTitle placeholder={props.title} {...props} />;
-  return <h1>{props.title}</h1>;
+  return (
+    <StyledColumnTitle
+      value={props.title}
+      placeholder="Column Title"
+      type="text"
+    />
+  );
+  //return <h1>{props.title}</h1>;
 };
 
 export default ColumnTitle;

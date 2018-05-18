@@ -1,7 +1,8 @@
+import React from 'react';
 import styled from 'styled-components';
 import Textarea from 'react-textarea-autosize';
 
-const ColumnTitle = styled(Textarea)`
+const StyledColumnTitle = styled(Textarea)`
   background: transparent;
   border: none;
   font-weight: 800;
@@ -10,5 +11,10 @@ const ColumnTitle = styled(Textarea)`
   outline: 0px none transparent;
   margin-bottom: 14px;
 `;
+
+const ColumnTitle = props => {
+  //return <StyledColumnTitle placeholder={props.title} {...props} />;
+  return <h1>{props.title}</h1>;
+};
 
 export default ColumnTitle;

@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Box } from 'rebass';
+import { connect } from 'react-redux';
 import ColumnTitle from './ColumnTitle';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
+import { bindActionCreators } from 'redux';
+import { addCard } from '../Card/actions';
 
 const StyledColumn = styled(Box)`
   width: 300px;
@@ -18,14 +21,43 @@ const StyledColumn = styled(Box)`
   transition: box-shadow 150ms ease;
 `;
 
-const Column = () => {
-  return (
-    <StyledColumn px={2} pt={2} pb={1} mr={4}>
-      <ColumnTitle />
-      <Card />
-      <AddCard />
-    </StyledColumn>
-  );
-};
+class Column extends Component {
+  render() {
+    return (
+      <StyledColumn px={2} pt={2} pb={1} mr={4}>
+        <ColumnTitle title={this.props.columnData.definition} />
+        {this.props.columnData.possibleValues.map((card, index) => {
+          return <Card key={'card' + index} cardData={card} />;
+        })}
+        <AddCard
+          onClick={() => {
+            this.props.addCard(this.props.columnId);
+          }}
+        />
+      </StyledColumn>
+    );
+  }
+}
 
-export default Column;
+//const Column = ({ addCard, props, cards, ...card }) => {
+//  return (
+//    <StyledColumn px={2} pt={2} pb={1} mr={4}>
+//      <ColumnTitle />
+//      {this.props.cards.map(card => <Card {...card} />)}
+//      <AddCard onClick={addCard} />
+//    </StyledColumn>
+//  );
+//};
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      addCard,
+    },
+    dispatch
+  );
+const mapStateToProps = state => ({
+  cards: state.card,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Column);

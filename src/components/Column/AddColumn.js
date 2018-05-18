@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { addColumn } from '../Column/actions';
 
 const StyledAddColumn = styled(Button)`
-  width: 300px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -40,7 +40,7 @@ const mapDispatchToProps = dispatch =>
     dispatch
   );
 const mapStateToProps = state => ({
-  columns: state.column.columns,
+  columns: state.columns,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddColumn);

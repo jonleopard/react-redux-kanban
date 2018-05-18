@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { addColumn } from '../Column/actions';
 
 const StyledAddColumn = styled(Button)`
-  min-width: 300px;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: center;

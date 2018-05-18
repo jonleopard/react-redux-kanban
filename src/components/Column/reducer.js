@@ -1,4 +1,4 @@
-import { ADD_COLUMN } from './actions';
+import { ADD_COLUMN, REMOVE_COLUMN, ADD_CARD } from './actions';
 
 const initialState = [
   {
@@ -46,29 +46,29 @@ export default function(state = initialState, action) {
   let newState;
 
   switch (action.type) {
-    case 'ADD_CARD':
-      let dummyCard = {
+    case ADD_CARD:
+      let newCard = {
         definition: null,
         possibleValues: [],
       };
 
       newState = state.slice();
-      newState[action.columnId].possibleValues.push(dummyCard);
+      newState[action.columnId].possibleValues.push(newCard);
 
       return newState;
 
-    case 'ADD_COLUMN':
-      let dummyColumn = {
-        definition: 'Column Name',
+    case ADD_COLUMN:
+      let newColumn = {
+        definition: null,
         possibleValues: [],
       };
 
       newState = state.slice();
-      newState.push(dummyColumn);
+      newState.push(newColumn);
 
       return newState;
 
-    case 'REMOVE_COLUMN':
+    case REMOVE_COLUMN:
       newState = state.slice();
 
       newState.pop();

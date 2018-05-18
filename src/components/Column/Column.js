@@ -10,7 +10,8 @@ import { bindActionCreators } from 'redux';
 import { addCard } from '../Card/actions';
 
 const StyledColumn = styled(Box)`
-  min-width: 300px;
+  min-width: 250px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #eff1f5;
@@ -20,25 +21,6 @@ const StyledColumn = styled(Box)`
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 `;
-
-//class Column extends Component {
-// render() {
-//  return (
-//   <StyledColumn px={2} pt={2} pb={1} mr={4}>
-//    <ColumnOptions />
-//   <ColumnTitle title={this.props.columnData.definition} />
-//   {this.props.columnData.possibleValues.map((card, index) => {
-//     return <Card key={'card' + index} cardData={card} />;
-//    })}
-//     <AddCard
-//      onClick={() => {
-//        this.props.addCard(this.props.columnId);
-//       }}
-//     />
-//    </StyledColumn>
-//  );
-//  }
-//}
 
 const Column = ({ cardData, columnId, columnData, addCard }) => {
   return (

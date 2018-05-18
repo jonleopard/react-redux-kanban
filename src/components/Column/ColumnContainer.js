@@ -8,35 +8,35 @@ import AddColumn from './AddColumn';
 import { addCard } from '../Card/actions';
 import { addColumn, removeColumn } from './actions';
 
-class ColumnContainer extends Component {
-  render() {
-    return (
-      <Flex>
-        {this.props.columns.map((column, index) => {
-          return (
-            <Column
-              key={'column' + index}
-              columnData={column}
-              columnId={index}
-            />
-          );
-        })}
-        <AddColumn
-          onClick={() => {
-            this.props.addColumn();
-          }}
-        />
-        <button
-          onClick={() => {
-            this.props.removeColumn();
-          }}
-        >
-          delete
-        </button>
-      </Flex>
-    );
-  }
-}
+const ColumnContainer = ({
+  columns,
+  columnData,
+  columnId,
+  addColumn,
+  removeColumn,
+}) => {
+  return (
+    <Flex>
+      {columns.map((column, index) => {
+        return (
+          <Column key={'column' + index} columnData={column} columnId={index} />
+        );
+      })}
+      <AddColumn
+        onClick={() => {
+          addColumn();
+        }}
+      />
+      <button
+        onClick={() => {
+          removeColumn();
+        }}
+      >
+        delete
+      </button>
+    </Flex>
+  );
+};
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(

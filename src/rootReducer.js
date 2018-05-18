@@ -5,6 +5,7 @@ import columns from './components/Column/reducer';
 
 const rootReducer = combineReducers({
   columns,
+  card,
 });
 
 export default rootReducer;

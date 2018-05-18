@@ -48,7 +48,7 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case 'ADD_CARD':
       let dummyCard = {
-        definition: 'Dummy Card',
+        definition: null,
         possibleValues: [],
       };
 
@@ -59,7 +59,7 @@ export default function(state = initialState, action) {
 
     case 'ADD_COLUMN':
       let dummyColumn = {
-        definition: 'Dummy Column',
+        definition: 'Column Name',
         possibleValues: [],
       };
 

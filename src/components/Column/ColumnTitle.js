@@ -4,7 +4,7 @@ import Textarea from 'react-textarea-autosize';
 
 const StyledColumnTitle = styled(Textarea)`
   background: transparent;
-  border: none;
+  border: red;
   font-weight: 800;
   font-size: 18px
   resize: none;
@@ -12,15 +12,10 @@ const StyledColumnTitle = styled(Textarea)`
   margin-bottom: 14px;
 `;
 
-const ColumnTitle = props => {
+const ColumnTitle = ({ title, ...props }) => {
   return (
-    <StyledColumnTitle
-      value={props.title}
-      placeholder="Column Title"
-      type="text"
-    />
+    <StyledColumnTitle value={title} placeholder="Column Title" type="text" />
   );
-  //return <h1>{props.title}</h1>;
 };
 
 export default ColumnTitle;

@@ -18,11 +18,11 @@ const initialState = [
     definition: 'week day number',
     possibleValues: [
       {
-        definition: 1,
+        definition: '1',
         possibleValues: [],
       },
       {
-        definition: 2,
+        definition: '2',
         possibleValues: [],
       },
     ],
@@ -31,11 +31,11 @@ const initialState = [
     definition: 'year',
     possibleValues: [
       {
-        definition: 1980,
+        definition: '1980',
         possibleValues: [],
       },
       {
-        definition: 1981,
+        definition: '1981',
         possibleValues: [],
       },
     ],

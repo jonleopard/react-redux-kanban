@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex } from 'rebass';
+import { Flex, Button } from 'rebass';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Column from './Column';
@@ -27,13 +27,14 @@ const ColumnContainer = ({
           addColumn();
         }}
       />
-      <button
+      <Button
+        bg="red"
         onClick={() => {
           removeColumn();
         }}
       >
         delete
-      </button>
+      </Button>
     </Flex>
   );
 };

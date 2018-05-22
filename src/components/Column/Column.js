@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Box } from 'rebass';
 import { connect } from 'react-redux';
 import ColumnTitle from './ColumnTitle';
-import ColumnOptions from './ColumnOptions';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
 import { bindActionCreators } from 'redux';
@@ -25,7 +24,6 @@ const StyledColumn = styled(Box)`
 const Column = ({ cardData, columnId, columnData, addCard }) => {
   return (
     <StyledColumn px={2} pt={2} pb={1} mr={4}>
-      <ColumnOptions />
       <ColumnTitle title={columnData.definition} />
       {columnData.possibleValues.map((card, index) => {
         return <Card key={'card' + index} cardData={card} />;

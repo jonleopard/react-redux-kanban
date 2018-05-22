@@ -33,7 +33,7 @@ const ColumnContainer = ({
           removeColumn();
         }}
       >
-        delete
+        Remove Column
       </Button>
     </Flex>
   );

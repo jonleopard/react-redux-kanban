@@ -48,7 +48,6 @@ export default function(state = initialState, action) {
   switch (action.type) {
     case ADD_CARD:
       let newCard = {
-        definition: null,
         possibleValues: [],
       };
 
@@ -59,7 +58,6 @@ export default function(state = initialState, action) {
 
     case ADD_COLUMN:
       let newColumn = {
-        definition: null,
         possibleValues: [],
       };
 

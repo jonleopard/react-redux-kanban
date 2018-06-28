@@ -25,7 +25,7 @@ const StyledAddColumn = styled(Button)`
 
 const AddColumn = ({ addColumn, props }) => {
   return (
-    <StyledAddColumn w={1} onClick={addColumn} {...props}>
+    <StyledAddColumn bg='none' w={1} onClick={addColumn} {...props}>
       <PlusCircle size={50} />
       <p>Add Column</p>
     </StyledAddColumn>

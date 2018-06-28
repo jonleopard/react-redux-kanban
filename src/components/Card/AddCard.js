@@ -21,7 +21,7 @@ const StyledAddCard = styled(Button)`
 
 const AddCard = ({ addCard, ...props }) => {
   return (
-    <StyledAddCard mt={3} onClick={addCard} {...props}>
+    <StyledAddCard bg='none' mt={3} onClick={addCard} {...props}>
       <Plus />
     </StyledAddCard>
   );

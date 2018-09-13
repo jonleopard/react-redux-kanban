@@ -53,4 +53,7 @@ const mapStateToProps = state => ({
   columns: state.columns,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ColumnContainer);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ColumnContainer);

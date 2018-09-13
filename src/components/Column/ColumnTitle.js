@@ -12,7 +12,7 @@ const StyledColumnTitle = styled(Textarea)`
   margin-bottom: 14px;
 `;
 
-const ColumnTitle = ({ title, ...props }) => {
+const ColumnTitle = ({ title }) => {
   return (
     <StyledColumnTitle value={title} placeholder="Column Title" type="text" />
   );

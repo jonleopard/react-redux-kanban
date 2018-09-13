@@ -1,7 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Box } from 'rebass';
+import { Box, Absolute, Relative } from 'rebass';
+import { MoreHorizontal } from 'react-feather';
 import { connect } from 'react-redux';
+import {
+  Draggable,
+  Droppable,
+  DragComponent,
+  DragState
+} from "react-dragtastic"
 import ColumnTitle from './ColumnTitle';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';
@@ -24,11 +31,20 @@ const StyledColumn = styled(Box)`
 const Column = ({ cardData, columnId, columnData, addCard }) => {
   return (
     <StyledColumn px={2} pt={2} pb={1} mr={4}>
+      <Relative>
+        <Absolute bottom={0} right={0}>
+          <MoreHorizontal
+            color="gray"
+            onClick={() => {
+              console.log('hello');
+            }}
+          />
+        </Absolute>
+      </Relative>
       <ColumnTitle title={columnData.definition} />
       {columnData.possibleValues.map((card, index) => {
         return <Card key={'card' + index} cardData={card} />;
       })}
-
       <AddCard
         onClick={() => {
           addCard(columnId);
@@ -49,4 +65,7 @@ const mapStateToProps = state => ({
   cards: state.card,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Column);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Column);

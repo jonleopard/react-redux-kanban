@@ -3,12 +3,6 @@ import styled from 'styled-components';
 import { Box, Absolute, Relative } from 'rebass';
 import { MoreHorizontal } from 'react-feather';
 import { connect } from 'react-redux';
-import {
-  Draggable,
-  Droppable,
-  DragComponent,
-  DragState
-} from "react-dragtastic"
 import ColumnTitle from './ColumnTitle';
 import Card from '../Card/Card';
 import AddCard from '../Card/AddCard';

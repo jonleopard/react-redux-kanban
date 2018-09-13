@@ -26,10 +26,6 @@ In order to implement any interactivity, we must first structure and organize ou
 
 React router will most likely be used here. This will help us handle which components will render, and will give us history props for both the URL, and breadcrumbs. No further thoughts on this until project matures.
 
-### What I've Learned
-
-I was not very familiar with Redux prior to this project. Normally I use setState, but due to the nature of this project, I feel it is better to use Redux.
-
 ### What I'm Currently Working On
 
 1.  Implementing [Redux](https://redux.js.org/) for state
